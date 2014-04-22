@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="http://www.metcash.com/RetailWebService/" xmlns:ns0="http://ws.tibco.integration.metcash.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Untitled" targetNamespace="http://www.metcash.com/RetailWebService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://ws.tibco.integration.metcash.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ws.tibco.integration.metcash.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Authentication">
+        <xs:sequence>
+          <xs:element name="B2BAccount" type="xs:string" />
+          <xs:element name="Password" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerId" type="xs:string" />
+          <xs:element minOccurs="0" name="StateCode" type="xs:string" />
+          <xs:element minOccurs="0" name="PillarId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="placeWSOrder">
+        <xs:sequence>
+          <xs:element name="WSOrder" type="xs:string" />
+          <xs:element name="OrderType" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceService" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="placeWSOrderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Authentication" type="tns:Authentication" />
+      <xs:element name="placeWSOrder" type="tns:placeWSOrder" />
+      <xs:element name="placeWSOrderResponse" type="tns:placeWSOrderResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="placeWSOrder">
+    <wsdl:part name="parameters" element="ns0:placeWSOrder" />
+    <wsdl:part name="Authentication" element="ns0:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="placeWSOrderResponse">
+    <wsdl:part name="result" element="ns0:placeWSOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RetailWebService">
+    <wsdl:operation name="placeWSOrder">
+      <wsdl:input message="tns:placeWSOrder" />
+      <wsdl:output message="tns:placeWSOrderResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RetailWebServiceEndpointBinding" type="tns:RetailWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="placeWSOrder">
+      <soap:operation soapAction="/RetailWebServices/SharedResources/Schema/Ash2WSDL/RetailWebService-service0.serviceagent/RetailWebServiceEndpoint0/placeWSOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:placeWSOrder" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="result" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RetailWebService.serviceagent">
+    <wsdl:port name="RetailWebServiceEndpoint" binding="tns:RetailWebServiceEndpointBinding">
+      <soap:address location="https://testservices.metcash.com/orders" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

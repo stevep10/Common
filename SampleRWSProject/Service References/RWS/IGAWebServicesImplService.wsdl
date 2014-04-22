@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://websrvc.hss.integration.metcash.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="IGAWebServicesImplService" targetNamespace="http://websrvc.hss.integration.metcash.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://testservices.metcash.com/hssservice/IGAWebServices?xsd=1" namespace="http://websrvc.hss.integration.metcash.com/" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://testservices.metcash.com/hssservice/IGAWebServices?xsd=2" namespace="http://mailbox.ws.integration.metcash.com/" />
+    </xsd:schema>
+  </types>
+  <message name="areYouThere">
+    <part name="parameters" element="tns:areYouThere" />
+    <part name="authentication" element="tns:authentication" />
+  </message>
+  <message name="areYouThereResponse">
+    <part name="result" element="tns:areYouThereResponse" />
+  </message>
+  <message name="downloadAllInvoices">
+    <part name="parameters" element="tns:downloadAllInvoice" />
+    <part name="authentication" element="tns:authentication" />
+  </message>
+  <message name="downloadAllInvoicesResponse">
+    <part name="result" element="tns:downloadAllInvoiceResponse" />
+  </message>
+  <message name="listInvoices">
+    <part name="parameters" element="tns:listInvoices" />
+    <part name="authentication" element="tns:authentication" />
+  </message>
+  <message name="listInvoicesResponse">
+    <part name="result" element="tns:listInvoicesResponse" />
+  </message>
+  <message name="listHostFilesQueued">
+    <part name="parameters" element="tns:listHostFilesQueued" />
+    <part name="authentication" element="tns:authentication" />
+  </message>
+  <message name="listHostFilesQueuedResponse">
+    <part name="result" element="tns:listHostFilesQueuedResponse" />
+  </message>
+  <message name="getLastFileSent">
+    <part name="parameters" element="tns:getLastFileSent" />
+    <part name="authentication" element="tns:authentication" />
+  </message>
+  <message name="getLastFileSentResponse">
+    <part name="result" element="tns:getLastFileSentResponse" />
+  </message>
+  <message name="getNextFileQueued">
+    <part name="parameters" element="tns:getNextFileQueued" />
+    <part name="authentication" element="tns:authentication" />
+  </message>
+  <message name="getNextFileQueuedResponse">
+    <part name="result" element="tns:getFileResponse" />
+  </message>
+  <message name="placeMailboxOrder">
+    <part name="parameters" element="tns:placeMailboxOrder" />
+    <part name="authentication" element="tns:authentication" />
+  </message>
+  <message name="placeMailboxOrderResponse">
+    <part name="result" element="tns:placeMailboxOrderResponse" />
+  </message>
+  <message name="getOrderSummary">
+    <part name="parameters" element="tns:getOrderSummary" />
+    <part name="authentication" element="tns:authentication" />
+  </message>
+  <message name="getOrderSummaryResponse">
+    <part name="result" element="tns:OrderSummaryResponse" />
+  </message>
+  <portType name="IGAWebServices">
+    <operation name="areYouThere" parameterOrder="parameters authentication">
+      <input message="tns:areYouThere" />
+      <output message="tns:areYouThereResponse" />
+    </operation>
+    <operation name="downloadAllInvoices" parameterOrder="parameters authentication">
+      <input message="tns:downloadAllInvoices" />
+      <output message="tns:downloadAllInvoicesResponse" />
+    </operation>
+    <operation name="listInvoices" parameterOrder="parameters authentication">
+      <input message="tns:listInvoices" />
+      <output message="tns:listInvoicesResponse" />
+    </operation>
+    <operation name="listHostFilesQueued" parameterOrder="parameters authentication">
+      <input message="tns:listHostFilesQueued" />
+      <output message="tns:listHostFilesQueuedResponse" />
+    </operation>
+    <operation name="getLastFileSent" parameterOrder="parameters authentication">
+      <input message="tns:getLastFileSent" />
+      <output message="tns:getLastFileSentResponse" />
+    </operation>
+    <operation name="getNextFileQueued" parameterOrder="parameters authentication">
+      <input message="tns:getNextFileQueued" />
+      <output message="tns:getNextFileQueuedResponse" />
+    </operation>
+    <operation name="placeMailboxOrder" parameterOrder="parameters authentication">
+      <input message="tns:placeMailboxOrder" />
+      <output message="tns:placeMailboxOrderResponse" />
+    </operation>
+    <operation name="getOrderSummary" parameterOrder="parameters authentication">
+      <input message="tns:getOrderSummary" />
+      <output message="tns:getOrderSummaryResponse" />
+    </operation>
+  </portType>
+  <binding name="IGAWebServicesPortBinding" type="tns:IGAWebServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="areYouThere">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:areYouThere" part="authentication" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="downloadAllInvoices">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:downloadAllInvoices" part="authentication" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listInvoices">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:listInvoices" part="authentication" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listHostFilesQueued">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:listHostFilesQueued" part="authentication" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getLastFileSent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:getLastFileSent" part="authentication" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextFileQueued">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:getNextFileQueued" part="authentication" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="placeMailboxOrder">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:placeMailboxOrder" part="authentication" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getOrderSummary">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:getOrderSummary" part="authentication" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="IGAWebServicesImplService">
+    <port name="IGAWebServicesPort" binding="tns:IGAWebServicesPortBinding">
+      <soap:address location="https://testservices.metcash.com/hssservice/IGAWebServices" />
+    </port>
+  </service>
+</definitions>

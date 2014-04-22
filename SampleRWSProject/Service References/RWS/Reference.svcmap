@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f54ee82b-7ab0-40ba-bb5b-2b4c8396685f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://testservices.metcash.com/hssservice/IGAWebServices?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IGAWebServices.xsd" MetadataType="Schema" ID="fc139e49-8f15-4e0b-a5ff-d0abea5edacc" SourceId="1" SourceUrl="https://testservices.metcash.com/hssservice/IGAWebServices?xsd=1" />
+    <MetadataFile FileName="IGAWebServicesImplService.wsdl" MetadataType="Wsdl" ID="9601ed60-7a19-418e-ad0f-70af4db7ab10" SourceId="1" SourceUrl="https://testservices.metcash.com/hssservice/IGAWebServices?wsdl" />
+    <MetadataFile FileName="IGAWebServices1.xsd" MetadataType="Schema" ID="7162c6b7-32ba-4406-9cf3-917d29957fbe" SourceId="1" SourceUrl="https://testservices.metcash.com/hssservice/IGAWebServices?xsd=2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

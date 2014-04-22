@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://websrvc.hss.integration.metcash.com/" xmlns:ns1="http://mailbox.ws.integration.metcash.com/" targetNamespace="http://websrvc.hss.integration.metcash.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://testservices.metcash.com/hssservice/IGAWebServices?xsd=2" namespace="http://mailbox.ws.integration.metcash.com/" />
+  <xs:element name="OrderSummaryResponse" type="tns:OrderSummaryResponse" />
+  <xs:element name="areYouThere" type="tns:areYouThere" />
+  <xs:element name="areYouThereResponse" type="tns:areYouThereResponse" />
+  <xs:element name="authentication" nillable="true" type="tns:Authentication" />
+  <xs:element name="downloadAllInvoice" type="tns:downloadAllInvoice" />
+  <xs:element name="downloadAllInvoiceResponse" type="tns:downloadAllInvoiceResponse" />
+  <xs:element name="getFileResponse" type="tns:getFileResponse" />
+  <xs:element name="getLastFileSent" type="tns:getLastFileSent" />
+  <xs:element name="getLastFileSentResponse" type="tns:getLastFileSentResponse" />
+  <xs:element name="getNextFileQueued" type="tns:getNextFileQueued" />
+  <xs:element name="getOrderSummary" type="tns:getOrderSummary" />
+  <xs:element name="listHostFilesQueued" type="tns:listHostFilesQueued" />
+  <xs:element name="listHostFilesQueuedResponse" type="tns:listHostFilesQueuedResponse" />
+  <xs:element name="listInvoices" type="tns:listInvoices" />
+  <xs:element name="listInvoicesResponse" type="tns:listInvoicesResponse" />
+  <xs:element name="placeMailboxOrder" type="tns:placeMailboxOrder" />
+  <xs:element name="placeMailboxOrderResponse" type="tns:placeMailboxOrderResponse" />
+  <xs:complexType name="getLastFileSent">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="Authentication">
+    <xs:sequence>
+      <xs:element name="TpId" type="xs:string" />
+      <xs:element name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:string" />
+      <xs:element minOccurs="0" name="StateCode" type="xs:string" />
+      <xs:element minOccurs="0" name="PillarId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLastFileSentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="response" type="tns:metFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="metFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="convertedDataFile" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="dataHandler" type="xs:string" />
+      <xs:element minOccurs="0" name="fileName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placeMailboxOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mailboxOrder" type="xs:string" />
+      <xs:element minOccurs="0" name="fileName" type="xs:string" />
+      <xs:element minOccurs="0" name="mailboxNumber" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placeMailboxOrderResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="orderSummary" type="ns1:mailboxOrderAck" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listHostFilesQueued">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listHostFilesQueuedResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="response" type="tns:wsResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="wsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="files" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+      <xs:element name="status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listInvoices">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mailboxid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listInvoicesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="list" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getNextFileQueued">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getFileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="response" type="tns:metFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="areYouThere">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="areYouThereResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="response" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrderSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mailboxId" type="xs:string" />
+      <xs:element minOccurs="0" name="batchId" type="xs:string" />
+      <xs:element minOccurs="0" name="timeStamp" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrderSummaryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="response" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="downloadAllInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mailboxId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="downloadAllInvoiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="response" type="tns:wsResponse" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
