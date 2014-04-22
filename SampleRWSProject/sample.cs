@@ -16,6 +16,7 @@ namespace SampleRWSProject
             InitializeComponent();
         }
 
+        //sample call to the AreYouThere Method
         private void btnAreYouThere_Click(object sender, EventArgs e)
         {
 
@@ -46,6 +47,7 @@ namespace SampleRWSProject
 
         }
 
+        //sample call to the placeWSOrder Method
         private void button1_Click(object sender, EventArgs e)
         {
             ORD.RetailWebServiceClient ordClient = new ORD.RetailWebServiceClient();
