@@ -27,6 +27,7 @@ namespace SampleRWSProject
 
                 authHeader.TpId = txtB2BAccount.Text;
                 authHeader.Password = txtPassword.Text;
+                //Not required but included for backward compatability
                 authHeader.PillarId = "";
                 authHeader.StateCode = "";
                 authHeader.CustomerId = "";
